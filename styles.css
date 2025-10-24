@@ -1,0 +1,285 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Hover underline animation */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: #ffb347;
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url('https://media.istockphoto.com/id/495170130/photo/spices-and-food-ingredients-on-slate-background.jpg?s=612x612&w=0&k=20&c=4A6Crif3qYrRXSmcbBpohlTUBMTWssJUD-RCecSclzc=') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: #fff;
+  text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding: 20px;
+  animation: fadeSlideUp 1.2s ease-in-out;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #f5f5f5;
+  opacity: 0.9;
+}
+
+.hero-content button {
+  background: #28a745;
+  border: none;
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-content button:hover {
+  transform: scale(1.08);
+  background: #34c759;
+  box-shadow: 0 0 15px rgba(52, 199, 89, 0.5);
+}
+
+/* Animation */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Overlay Gradient */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+  z-index: 1;
+}
+
+/* Hero Content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  max-width: 700px;
+  padding: 20px;
+  animation: fadeInUp 1.5s ease;
+}
+
+/* Heading Animation */
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* Paragraph */
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* Button Style */
+.hero-content button {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.hero-content button:hover {
+  transform: scale(1.08);
+  background: #34c759;
+  box-shadow: 0 0 20px rgba(52, 199, 89, 0.6);
+}
+
+/* Keyframe Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #128807;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+.cta-button:hover {
+    background: #0a5a0a;
+}
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.recipe-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+.recipe-card:hover {
+    transform: translateY(-5px);
+}
+.recipe-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.recipe-card h3 {
+    margin: 15px;
+    color: #FF9933;
+}
+.recipe-card p {
+    margin: 15px;
+}
+.ingredients {
+    list-style: none;
+    padding: 0;
+    margin: 15px;
+}
+.ingredients li {
+    margin-bottom: 5px;
+}
+.video-link {
+    display: inline-block;
+    margin: 15px;
+    padding: 10px 15px;
+    background: #128807;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.video-link:hover {
+    background: #0a5a0a;
+}
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+/* Responsive */
+@media (max-width: 768px) {
+    .hero {
+        height: 50vh;
+    }
+    .hero h1 {
+        font-size: 2em;
+    }
+    .hero p {
+        font-size: 1em;
+    }
+    .recipe-grid {
+        grid-template-columns: 1fr;
+    }
+}
